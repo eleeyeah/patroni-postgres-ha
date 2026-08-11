@@ -4,7 +4,7 @@ metadata:
   name: patroni-postgres-ha
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io/background
 spec:
   description: Patroni / Zalando Postgres HA (local + EKS)
   sourceRepos:
