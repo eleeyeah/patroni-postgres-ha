@@ -12,7 +12,7 @@ spec:
           # - env: eks
   template:
     metadata:
-      name: "patroni-pg-{{.env}}"
+      name: "patroni-pg-{{env}}"
       namespace: argocd
       finalizers:
         - resources-finalizer.argocd.argoproj.io/background
@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: git@github.com:eleeyeah/patroni-postgres-ha.git
         targetRevision: HEAD
-        path: envs/{{.env}}
+        path: envs/{{env}}
         directory:
           recurse: true
       destination:
