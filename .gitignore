@@ -7,6 +7,9 @@ secrets/
 *.secret.yaml
 *-secrets.yaml
 **/secret-overrides.yaml
+argocd/git-repo-secret.yaml
+argocd/deploy-key
+argocd/deploy-key.pub
 .env
 .env.*
 !.env.example
