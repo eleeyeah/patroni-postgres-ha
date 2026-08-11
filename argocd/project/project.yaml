@@ -8,8 +8,7 @@ metadata:
 spec:
   description: Patroni / Zalando Postgres HA (local + EKS)
   sourceRepos:
-    # REPLACE: your git remote (see ../REPO.md)
-    - git@github.com:YOUR_ORG/YOUR_REPO.git
+    - git@github.com:eleeyeah/patroni-postgres-ha.git
     # Zalando official Helm repo for the operator chart
     - https://opensource.zalando.com/postgres-operator/charts/postgres-operator
   destinations:

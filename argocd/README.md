@@ -28,12 +28,12 @@ envs/
 4. Apply project + ApplicationSet (or root app):
 
 ```bash
-# From repo root that contains patroni-postgres-ha/
-kubectl apply -f patroni-postgres-ha/argocd/project/project.yaml
-kubectl apply -f patroni-postgres-ha/argocd/project/applicationset.yaml
+# From this repo root (patroni-postgres-ha/)
+kubectl apply -f argocd/project/project.yaml
+kubectl apply -f argocd/project/applicationset.yaml
 
 # Or App-of-Apps:
-kubectl apply -f patroni-postgres-ha/argocd/root-app.yaml
+kubectl apply -f argocd/root-app.yaml
 ```
 
 5. Sync waves: operator (`wave 0`) before cluster (`wave 1`).

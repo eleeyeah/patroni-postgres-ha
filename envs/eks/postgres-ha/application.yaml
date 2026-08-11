@@ -13,10 +13,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: postgres-ha
   source:
-    # REPLACE: see patroni-postgres-ha/argocd/REPO.md
-    repoURL: git@github.com:YOUR_ORG/YOUR_REPO.git
+    repoURL: git@github.com:eleeyeah/patroni-postgres-ha.git
     targetRevision: HEAD
-    path: patroni-postgres-ha/helm-charts/postgres-ha
+    path: helm-charts/postgres-ha
     helm:
       releaseName: postgres-ha
       valueFiles:

@@ -11,10 +11,9 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    # REPLACE: see argocd/REPO.md
-    repoURL: git@github.com:YOUR_ORG/YOUR_REPO.git
+    repoURL: git@github.com:eleeyeah/patroni-postgres-ha.git
     targetRevision: HEAD
-    path: patroni-postgres-ha/argocd/project
+    path: argocd/project
   syncPolicy:
     automated:
       prune: true

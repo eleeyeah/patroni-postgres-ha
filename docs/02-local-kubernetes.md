@@ -23,8 +23,8 @@ Pattern matches [`tutorials/lessons/200`](../../tutorials/lessons/200/README.md)
 
 ## Deploy with Argo CD (preferred)
 
-1. Replace `git@github.com:YOUR_ORG/YOUR_REPO.git` everywhere (see REPO.md).
-2. Commit/push `patroni-postgres-ha/` so Argo CD can clone it.
+1. Confirm `repoURL` is `git@github.com:eleeyeah/patroni-postgres-ha.git` (see REPO.md).
+2. Commit/push this repo so Argo CD can clone it.
 3. Register the repo in Argo CD if private (SSH key / credential — same idea as lesson 200 `git-repo-secret.yaml`).
 4. Apply project + apps:
 
