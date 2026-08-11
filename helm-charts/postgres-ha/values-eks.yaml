@@ -1,0 +1,14 @@
+# EKS overrides — use after lessons/200 EKS + EBS CSI
+numberOfInstances: 3
+
+volume:
+  size: 20Gi
+  storageClass: gp3
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 1Gi
+  limits:
+    cpu: "2"
+    memory: 2Gi

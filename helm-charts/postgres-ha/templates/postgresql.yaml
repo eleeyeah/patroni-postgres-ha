@@ -1,0 +1,22 @@
+apiVersion: acid.zalan.do/v1
+kind: postgresql
+metadata:
+  name: {{ include "postgres-ha.fullname" . }}
+  labels:
+    {{- include "postgres-ha.labels" . | nindent 4 }}
+spec:
+  teamId: {{ .Values.teamId | quote }}
+  numberOfInstances: {{ .Values.numberOfInstances }}
+  volume:
+    size: {{ .Values.volume.size | quote }}
+    {{- if .Values.volume.storageClass }}
+    storageClass: {{ .Values.volume.storageClass | quote }}
+    {{- end }}
+  users:
+    {{- toYaml .Values.users | nindent 4 }}
+  databases:
+    {{- toYaml .Values.databases | nindent 4 }}
+  postgresql:
+    version: {{ .Values.postgresql.version | quote }}
+  resources:
+    {{- toYaml .Values.resources | nindent 4 }}

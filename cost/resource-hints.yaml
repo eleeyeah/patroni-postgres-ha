@@ -1,0 +1,41 @@
+# Documentation fragment — copy fields into the postgresql CR as needed.
+# Not a standalone apply-able manifest.
+
+# --- Small homelab (tight nodes) ---
+# spec:
+#   numberOfInstances: 2
+#   volume:
+#     size: 10Gi
+#   resources:
+#     requests:
+#       cpu: 100m
+#       memory: 256Mi
+#     limits:
+#       cpu: 500m
+#       memory: 512Mi
+
+# --- Default lab (3 instances, modest) ---
+# spec:
+#   numberOfInstances: 3
+#   volume:
+#     size: 10Gi
+#   resources:
+#     requests:
+#       cpu: 100m
+#       memory: 512Mi
+#     limits:
+#       cpu: "1"
+#       memory: 1Gi
+
+# --- Heavier lab / closer to staging ---
+# spec:
+#   numberOfInstances: 3
+#   volume:
+#     size: 50Gi
+#   resources:
+#     requests:
+#       cpu: 500m
+#       memory: 1Gi
+#     limits:
+#       cpu: "2"
+#       memory: 2Gi

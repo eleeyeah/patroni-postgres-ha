@@ -1,0 +1,12 @@
+apiVersion: v2
+name: postgres-ha
+description: Zalando postgresql CR (Spilo + Patroni) for HA Postgres
+type: application
+version: 0.1.0
+appVersion: "16"
+keywords:
+  - postgresql
+  - patroni
+  - zalando
+maintainers:
+  - name: local

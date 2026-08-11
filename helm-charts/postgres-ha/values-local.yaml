@@ -1,0 +1,15 @@
+# Local kubeadm overrides — set storageClass to a class that exists on your cluster
+numberOfInstances: 3
+
+volume:
+  size: 10Gi
+  # Example: local-path | nfs-client | longhorn
+  storageClass: local-path
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 512Mi
+  limits:
+    cpu: "1"
+    memory: 1Gi

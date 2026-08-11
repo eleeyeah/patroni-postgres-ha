@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgres-ha-local
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: patroni-postgres-ha
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: postgres-ha
+  source:
+    # REPLACE: see patroni-postgres-ha/argocd/REPO.md
+    repoURL: git@github.com:YOUR_ORG/YOUR_REPO.git
+    targetRevision: HEAD
+    path: patroni-postgres-ha/helm-charts/postgres-ha
+    helm:
+      releaseName: postgres-ha
+      valueFiles:
+        - values.yaml
+        - values-local.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+      - Validate=true
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+  # Requires postgres-operator (sync-wave 0) and a working StorageClass

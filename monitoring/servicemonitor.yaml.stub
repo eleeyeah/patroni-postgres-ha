@@ -1,0 +1,23 @@
+# Example ServiceMonitor — DO NOT apply until Prometheus Operator CRDs exist.
+# Rename to servicemonitor.yaml and fix selectors for your cluster Services.
+#
+# apiVersion: monitoring.coreos.com/v1
+# kind: ServiceMonitor
+# metadata:
+#   name: acid-postgres-cluster
+#   namespace: postgres-ha
+#   labels:
+#     app.kubernetes.io/part-of: patroni-postgres-ha
+#     release: kube-prometheus-stack   # must match your Prometheus operator selector
+# spec:
+#   namespaceSelector:
+#     matchNames:
+#       - postgres-ha
+#   selector:
+#     matchLabels:
+#       application: spilo
+#       # confirm labels: kubectl -n postgres-ha get svc --show-labels
+#   endpoints:
+#     - port: metrics          # confirm port name
+#       interval: 30s
+#       scrapeTimeout: 10s

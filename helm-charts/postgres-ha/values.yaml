@@ -1,0 +1,32 @@
+# Default values — override per env (values-local.yaml / values-eks.yaml)
+fullname: acid-postgres-cluster
+teamId: acid
+
+numberOfInstances: 3
+
+postgresql:
+  version: "16"
+
+volume:
+  size: 10Gi
+  # Set per environment (required for reliable scheduling)
+  storageClass: ""
+
+users:
+  zalando:
+    - superuser
+    - createdb
+
+databases:
+  app: zalando
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 512Mi
+  limits:
+    cpu: "1"
+    memory: 1Gi
+
+# Extra labels on the CR
+labels: {}

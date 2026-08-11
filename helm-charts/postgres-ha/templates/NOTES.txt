@@ -1,0 +1,8 @@
+1. Requires Zalando Postgres Operator CRDs (`postgresqls.acid.zalan.do`).
+2. Cluster: {{ include "postgres-ha.fullname" . }} in namespace {{ .Release.Namespace }}.
+3. Connect (after pods Ready):
+
+  kubectl -n {{ .Release.Namespace }} get postgresql,pods,svc,pvc
+  kubectl -n {{ .Release.Namespace }} port-forward svc/{{ include "postgres-ha.fullname" . }} 5432:5432
+
+  (Service name may be {{ include "postgres-ha.fullname" . }} or {{ include "postgres-ha.fullname" . }}-master — confirm with kubectl get svc.)
