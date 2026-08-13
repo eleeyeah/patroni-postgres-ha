@@ -2,7 +2,7 @@
 fullname: acid-postgres-cluster
 teamId: acid
 
-numberOfInstances: 3
+numberOfInstances: 5
 
 postgresql:
   version: "16"
@@ -13,12 +13,10 @@ volume:
   storageClass: ""
 
 users:
-  zalando:
-    - superuser
-    - createdb
+  events_platform: []
 
 databases:
-  app: zalando
+  events_platform: events_platform
 
 resources:
   requests:
